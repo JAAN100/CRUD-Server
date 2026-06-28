@@ -5,7 +5,7 @@ const app = express();
 const userRouter = require("./routes/user");
 const PORT = 8000;
 
-ConnectToMongoDB("process.env.MONGO_URI")
+ConnectToMongoDB("process.env.MONGODB_URI")
 .then(()=>{
   console.log("Connected To MongoDB!");
 });
