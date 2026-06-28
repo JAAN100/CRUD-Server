@@ -10,6 +10,7 @@ router.put("/updateUser/:id" , UpdateUser);
 
 router.get("/getUser/:id" , GetUsersByID);
 
+
 router.delete("/deleteUser/:id" , DeleteByID);
 module.exports = router;
 

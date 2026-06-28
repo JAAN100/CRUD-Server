@@ -19,6 +19,10 @@ app.use(express.urlencoded({extended : false}))
 app.use("/api" , userRouter);
 
 
+app.use("/" , (req , res)=>{
+  return res.json({});
+})
+
 
 
 
