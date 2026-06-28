@@ -10,7 +10,9 @@ ConnectToMongoDB("mongodb://127.0.0.1:27017/crud")
   console.log("Connected To MongoDB!");
 });
 
-app.use(cors());
+app.use(cors({
+  origin: "https://crud-frontend-orpin-nine.vercel.app/" // add this after frontend is deployed
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended : false}))
 
