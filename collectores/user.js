@@ -7,7 +7,7 @@ async function CreateUser(req ,res){
     age
   })
   const users = await USERS.find({});
-  return res.json({users});
+  return res.json(users);
 }
 async function GetUsers(req ,res){
   const users = await USERS.find({});
