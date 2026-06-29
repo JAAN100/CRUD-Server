@@ -14,11 +14,15 @@ async function GetUsers(req ,res){
 }
 
 async function UpdateUser(req, res){
-  const id = req.params.id;
+  try{const id = req.params.id;
   const {name , email , age} = req.body;
   await USERS.findByIdAndUpdate(id , {name , email ,age})
-  .then(updatedUser => res.json(updatedUser))
-  .catch(err => console.log(err));
+    const users = await USERS.find({});
+    return res.json(users);}
+    catch(err){
+      console.log(err);
+      return res.status(500).json({ error: err.message });
+    }
 }
 
 async function GetUsersByID(req,res){
