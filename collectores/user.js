@@ -1,13 +1,9 @@
 const USERS = require("../models/users");
-async function CreateUser(req ,res){
-  const {name , email , age} = req.body;
-  await USERS.create({
-    name,
-    email,
-    age
-  })
+async function CreateUser(req, res){
+  const {name, email, age} = req.body;
+  await USERS.create({ name, email, age });
   const users = await USERS.find({});
-  return res.json(users);
+  return res.json(users);   // no braces
 }
 async function GetUsers(req ,res){
   const users = await USERS.find({});
