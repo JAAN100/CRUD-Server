@@ -1,11 +1,12 @@
 const USERS = require("../models/users");
 async function CreateUser(req ,res){
   const {name , email , age} = req.body;
-  const users = await USERS.create({
+  await USERS.create({
     name,
     email,
     age
   })
+  const users = await USERS.find({});
   return res.json({users});
 }
 async function GetUsers(req ,res){
